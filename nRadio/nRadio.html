@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nRadio</title>
+<link rel="stylesheet" href="./nRadio.css">
+<style type="text/css">
+	*{padding:0;margin:0;}
+	.testnRadio{
+		margin:50px;
+		padding:20px;
+		border:1px solid blue;
+	}
+</style>
+
+</head>
+<body>
+	<div class="testnRadio">
+		<input type="radio" name="test"/>
+		<input type="radio" name="test"/>
+		<input type="text" name="test"/>
+		<span type="radio" name="test">sasfasdfdf</span>
+	</div>
+</body>
+<script src="./jquery-2.1.1.min.js"></script>
+<script src="./nRadio.js"></script>
+<script>
+	$.nRadio.init($("input"));
+</script>
+</html>
