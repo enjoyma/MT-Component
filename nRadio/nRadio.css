@@ -10,8 +10,8 @@ a input{
 	visibility: hidden;
 }
 a.wrapnRadio.unchecked{
-	background:#fff url(./radio.png) no-repeat 0 0;
+	background:#fff url(./nRadio.png) no-repeat 0 0;
 }
 a.wrapnRadio.checked{
-	background:#fff url(./radio.png) no-repeat 0 -14px;
+	background:#fff url(./nRadio.png) no-repeat 0 -14px;
 }

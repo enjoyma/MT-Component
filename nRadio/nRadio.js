@@ -1,10 +1,10 @@
 /**
  * 基于jQuery的自定义样式Radio
- * @param  [elem,elem] or jQuery elem
+ * @param  [original elem,original elem] or jQuery elem
  * @return null
  * 对外接口
  * 1.$.nRadio.init(jQelem) //初始化，装饰原始radio
- * 2.$.nRadio.check(jQelem) //jQelem为radio或radio的父标签a
+ * 2.$.nRadio.check(jQelem) //jQelem为radio或radio的父标签a(待实现)
  * 2014-11-30   马厅  hzmating
  */
 (function($, window) {
@@ -28,7 +28,7 @@
         this.makenRadio = function($radios){
             //wrap radios
             $radios.each($.proxy(function(num, radio){
-                $(radio).wrap($(radio.checked ? "<a class='wrapnRadio checked'>":"<a class='wrapnRadio unchecked'>"));
+                $(radio).wrap($(radio.checked ? "<a href='javascript:;' class='wrapnRadio checked'></a>":"<a href='javascript:;' class='wrapnRadio unchecked'></a>"));
                 //bind event
                 this.bindEvent($(radio),$radios);
             },this));
@@ -45,15 +45,13 @@
             });
         };
         this.check = function(){
-            alert();
+            alert("sorry!not complete!");
         };
     }
     var nRadio = new _nRadio();
     //暴露接口
     $.nRadio = {
         "init" : function(elems){ nRadio.init(elems);},
-        "check" : function(elems){ nRadio.check(elems);},
+        "check" : function(elems){ nRadio.check(elems);}
     }
-    // $.nRadio.init = nRadio.init;
-    // $.nRadio.check = nRadio.check;
 })($, window);
