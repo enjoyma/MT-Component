@@ -11,8 +11,8 @@ a input{
 	display: none;
 }
 .nRadioUnchecked{
-	background:#fff url(../images/nRadio.png?20141207) no-repeat 0 0;
+	background:#fff url(./nRadio.png?20141207) no-repeat 0 0;
 }
 .nRadioChecked{
-	background:#fff url(../images/nRadio.png?20141207) no-repeat 0 -14px;
+	background:#fff url(./nRadio.png?20141207) no-repeat 0 -14px;
 }

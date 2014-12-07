@@ -1,3 +1,5 @@
+<!-- nRadio的简单例子-->
+<!-- 2014-12-07  马厅-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,25 +8,74 @@
 <link rel="stylesheet" type="text/css" href="./nRadio.css">
 <style type="text/css">
 	*{padding:0;margin:0;}
-	.testnRadio{
+	.introduce1{
+		margin:50px 0 0 50px;
+		height:20px;
+	}
+	.introduce2{
+		margin-left:50px;
+		height:20px;
+	}
+	.testnRadio1{
 		margin:50px;
 		padding:20px;
 		border:1px solid blue;
+	}
+	.testnRadio1 div{
+		margin-bottom: 10px;
+		color:blue;
+	}
+	.testnRadio2{
+		margin:50px;
+		padding:20px;
+		border:1px solid red;
+	}
+	.testnRadio2 div{
+		margin-bottom: 10px;
+		color:red;
+	}
+	.testnRadio2 label{
+		display: inline-block;
+		width:100px;
+		height: 30px;
+		border:1px solid #333;
 	}
 </style>
 
 </head>
 <body>
-	<div class="testnRadio">
-		<input type="radio" name="test"/>
-		<input type="radio" name="test"/>
-		<input type="text" name="test"/>
-		<span type="radio" name="test">sasfasdfdf</span>
+	<div class="introduce1">初始化方法：$.nRadio.init($("input"))</div>
+	<div class="introduce2">推荐写法：$.nRadio.init($("input:radio"))</div>
+	
+	<div class="testnRadio1">
+		<div>当前选中：<b ></b></div>
+		<input type="radio" name="test1" id="1"/>&nbsp;1
+		<input type="radio" name="test1" id="2"/>&nbsp;2
+		<input type="text" name="test1"/>
+		<span type="radio" name="test1">sasfasdfdf</span>
+	</div>
+	
+	<div class="testnRadio2">
+		<div>当前选中：<b></b></div>
+		<input type="radio" name="test2" id="radio1"/>
+		<label for="radio1">for radio1</label>
+		<input type="radio" name="test2" id="radio2"/>
+		<label for="radio2">for radio2</label>
+		<input type="radio" name="test2" id="radio3"/>
+		<label for="radio3">for radio3</label>
+		<input type="radio" name="test2" id="radio4"/>
+		<label for="radio4">for radio4</label>
 	</div>
 	<script type="text/javascript" src="./jquery-1.4.2.js"></script>
 	<script type="text/javascript" src="./nRadio.js"></script>
 	<script>
-	$.nRadio.init($("input"));
+	$(function(){
+		$.nRadio.init($("input"));//推荐：$.nRadio.init($("input:radio"))
+		$(document).delegate('input:radio,label', 'click', function() {
+			$(".testnRadio1 b").text($("input[name=test1]").filter(function(i,radio){return radio.checked;}).attr("id"));
+			$(".testnRadio2 b").text($("input[name=test2]").filter(function(i,radio){return radio.checked;}).attr("id"));
+		});
+	})
 	</script>
 </body>
 
